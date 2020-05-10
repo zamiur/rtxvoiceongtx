@@ -1,2 +1,1 @@
-# rtxvoiceongtx
- Install RTX Voice on non-RTX GPUs
+# RTX Voice on GTX (and non RTX GPUs)
