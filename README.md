@@ -14,15 +14,15 @@ On Windows, open up Command Prompt and copy the following command
 
 Once you have done that, go to the directory where the repository has been cloned and run `setup.exe`. 
 
-<img src="\Screenshots\setup_1.png" alt="setup_1" style="zoom:67%;" />
+![](https://raw.githubusercontent.com/zamiur/rtxvoiceongtx/master/Screenshots/setup_1.png)
 
 Figure 1.1 : Click "Agree and continue"
 
-<img src="\Screenshots\setup_2.png" alt="setup_2" style="zoom:67%;" />
+![](https://raw.githubusercontent.com/zamiur/rtxvoiceongtx/master/Screenshots/setup_2.png)
 
 Figure 1.2 : Click "Restart Now" once finished
 
-<img src="\Screenshots\rtx_voice_1.png" alt="rtx_voice_1" style="zoom:67%;" />
+![](https://raw.githubusercontent.com/zamiur/rtxvoiceongtx/master/Screenshots/rtx_voice_1.png)
 
 Figure 1.3 : And you're done! Follow the instructions shown in this window.
 
