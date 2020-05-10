@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nvi name="RTXVoice" title="${{title}}" version="${{version}}" versionText="${{version}}" timestamp="2020-04-08T11:15:23" disposition="default" installerMin="2.1002.64.316">
+	<strings>
+		<string name="title" value="NVIDIA RTX Voice Application"/>
+		<string name="version" value="0.5.12.6"/>
+		<string name="InstallLocation" value="${{NvidiaProgramFiles}}\NVIDIA RTX Voice"/>
+		<string name="AudioEffectsShortCutName" value="NVIDIA RTX Voice"/>
+		<string name="RTXVoiceBinaryName" value="NVIDIA RTX Voice.exe"/>
+		<string name="InstallBlockedMessage" value="${{title}} is not supported on your existing GPU. An RTX enabled GPU is needed for this application to run."/>
+	</strings>
+	<dependencies>
+		<package type="requires" package="RTXVoice.Driver"/>
+	</dependencies>
+	<extensions>
+		<extension file="RTXVoiceExt.dll"/>
+	</extensions>
+	<phases>
+		<setPropertyIf phase="checkIfRTXVoiceIsRunning" boolProperty="IsRTXVoiceRunning" when="install" onError="ignore" value="true">
+			<process name="${{RTXVoiceBinaryName}}" check="exists"/>
+		</setPropertyIf>
+		<exe phase="shutdownRTXVoice" name="nv\${{RTXVoiceBinaryName}}" condition="IsRTXVoiceRunning" when="install">
+			<arg value="-shutdown" quote="none"/>
+			<success value="0"/>
+		</exe>
+		<setPropertyIf phase="checkIfRTXVoiceIsStillRunning" boolProperty="ForceKillRTXVoice" when="install" onError="ignore" value="true">
+			<process name="${{RTXVoiceBinaryName}}" check="exists"/>
+		</setPropertyIf>
+		<exe phase="killRTXVoice" name="${{SystemDirectory}}\taskkill.exe" when="install" condition="ForceKillRTXVoice">
+			<arg value="/f /t /im" quote="none"/>
+			<arg value="${{RTXVoiceBinaryName}}"/>
+		</exe>
+		<standard phase="copyFiles">
+			<createDirectory target="${{InstallLocation}}"/>
+			<copyFile target="${{InstallLocation}}\denoiser_48k.wpkg" source="models\denoiser_48k.wpkg"/>
+			<copyFile target="${{InstallLocation}}\${{RTXVoiceBinaryName}}" source="nv\${{RTXVoiceBinaryName}}"/>
+			<copyFile target="${{InstallLocation}}\cudnn64_7.dll" source="nv\cudnn64_7.dll"/>
+			<copyFile target="${{InstallLocation}}\libcrypto-1_1-x64.dll" source="nv\libcrypto-1_1-x64.dll"/>
+			<copyFile target="${{InstallLocation}}\NvAFXPlugin.dll" source="nv\NvAFXPlugin.dll"/>
+			<copyFile target="${{InstallLocation}}\NVAudioEffects.dll" source="nv\NVAudioEffects.dll"/>
+			<copyFile target="${{InstallLocation}}\cublas64_10.dll" source="nv\cublas64_10.dll"/>
+			<copyFile target="${{InstallLocation}}\cublasLt64_10.dll" source="nv\cublasLt64_10.dll"/>
+			<copyFile target="${{InstallLocation}}\cufft64_10.dll" source="nv\cufft64_10.dll"/>
+			<copyFile target="${{InstallLocation}}\cudart64_101.dll" source="nv\cudart64_101.dll"/>
+			<copyFile target="${{InstallLocation}}\msvcp140.dll" source="nv\msvcp140.dll"/>
+			<copyFile target="${{InstallLocation}}\ucrtbase.dll" source="nv\ucrtbase.dll"/>
+			<copyFile target="${{InstallLocation}}\vcruntime140.dll" source="nv\vcruntime140.dll"/>
+			<copyFile target="${{InstallLocation}}\ThirdPartyLicenses.txt" source="nv\ThirdPartyLicenses.txt"/>
+			<copyFile target="${{InstallLocation}}\NVIDIA RTX Voice User Guide.pdf" source="nv\NVIDIA RTX Voice User Guide.pdf"/>
+			<copyFile target="${{InstallLocation}}\EULA.pdf" source="nv\EULA.pdf"/>
+		</standard>
+		<standard phase="createDesktopShortcut">
+			<createShortcutLink location="desktop" targetPath="${{InstallLocation}}\${{RTXVoiceBinaryName}}" linkName="${{AudioEffectsShortCutName}}" startIn="${{InstallLocation}}" runAsAdmin="false" iconPath="${{InstallLocation}}\${{RTXVoiceBinaryName}}"/>
+		</standard>
+		<standard phase="createStartMenuShortcut">
+			<createShortcutGroup location="startMenu" linkGroup="NVIDIA Corporation"/>
+			<createShortcutLink location="startMenu" targetPath="${{InstallLocation}}\${{RTXVoiceBinaryName}}" linkName="${{AudioEffectsShortCutName}}" linkGroup="NVIDIA Corporation" startIn="${{InstallLocation}}" runAsAdmin="false" iconPath="${{InstallLocation}}\${{RTXVoiceBinaryName}}"/>
+		</standard>
+		<standard phase="scheduleTaskForRTXVoice">
+			<scheduleTask action="create" taskName="RTXVoice" triggerType="logon" author="NVIDIA Corporation" description="NVIDIA RTX Voice Application" processPath="${{InstallLocation}}\${{RTXVoiceBinaryName}}" arguments="-minimized"/>
+		</standard>
+		<exe phase="LaunchApp" when="installClose" name="${{InstallLocation}}\${{RTXVoiceBinaryName}}" dir="${{InstallLocation}}" condition="!Global:RebootRequired" flags="nowait,noelevate"/>
+		<exe phase="killRTXVoice" name="${{SystemDirectory}}\taskkill.exe" when="uninstall" condition="ForceKillRTXVoice">
+			<arg value="/f /t /im" quote="none"/>
+			<arg value="${{RTXVoiceBinaryName}}"/>
+		</exe>
+		<setPropertyIf phase="checkIfRTXVoiceIsStillRunning" boolProperty="ForceKillRTXVoice" when="uninstall" onError="ignore" value="true">
+			<process name="${{RTXVoiceBinaryName}}" check="exists"/>
+		</setPropertyIf>
+		<exe phase="shutdownRTXVoice" name="${{InstallLocation}}\${{RTXVoiceBinaryName}}" condition="IsRTXVoiceRunning" when="uninstall">
+			<arg value="-shutdown" quote="none"/>
+			<success value="0"/>
+		</exe>
+		<setPropertyIf phase="checkIfRTXVoiceIsRunning" boolProperty="IsRTXVoiceRunning" when="uninstall" onError="ignore" value="true">
+			<process name="${{RTXVoiceBinaryName}}" check="exists"/>
+		</setPropertyIf>
+	</phases>
+	<manifest>
+		<file name="RTXVoice.nvi"/>
+		<file name="RTXVoiceExt.dll"/>
+		<file name="models\denoiser_48k.wpkg"/>
+		<file name="nv\cudnn64_7.dll"/>
+		<file name="nv\libcrypto-1_1-x64.dll"/>
+		<file name="nv\NvAFXPlugin.dll"/>
+		<file name="nv\NVAudioEffects.dll"/>
+		<file name="nv\NVIDIA RTX Voice.exe"/>
+		<file name="nv\cublas64_10.dll"/>
+		<file name="nv\cublasLt64_10.dll"/>
+		<file name="nv\cufft64_10.dll"/>
+		<file name="nv\cudart64_101.dll"/>
+		<file name="nv\msvcp140.dll"/>
+		<file name="nv\ucrtbase.dll"/>
+		<file name="nv\vcruntime140.dll"/>
+		<file name="nv\ThirdPartyLicenses.txt"/>
+		<file name="nv\NVIDIA RTX Voice User Guide.pdf"/>
+		<file name="nv\EULA.pdf"/>
+	</manifest>
+</nvi>
