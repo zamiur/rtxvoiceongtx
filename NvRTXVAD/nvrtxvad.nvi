@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<nvi name="RTXVoice.Driver" title="${{title}}" version="${{version}}" versionText="${{version}}" timestamp="2019-08-04T23:40:41" disposition="default" installerMin="2.1002.73.400" hasDriver="true">
+	<filter name="${{InstallerFlavor}}"/>
+	<strings>
+		<string name="version" value="1.0.0.2"/>
+		<localized locale="0x0409">
+			<string name="title" value="NVIDIA RTX Voice Driver"/>
+			<string name="InstallBlockedMessage" value="${{title}} cannot be installed on this computer."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+		</localized>
+		<localized locale="0x0401">
+			<string name="title" value="NVIDIA RTX Voice Driver"/>
+			<string name="InstallBlockedMessage" value="لا يمكن تثبيت ${{title}} على هذا الكمبيوتر."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+		</localized>
+		<localized locale="0x0405">
+			<string name="title" value="NVIDIA RTX Voice Driver"/>
+			<string name="InstallBlockedMessage" value="${{title}} nemůže být nainstalován na tento počítač."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+		</localized>
+		<localized locale="0x0406">
+			<string name="title" value="NVIDIA RTX Voice Driver"/>
+			<string name="InstallBlockedMessage" value="${{title}} kan ikke installeres på denne computer."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+		</localized>
+		<localized locale="0x0407">
+			<string name="title" value="NVIDIA RTX Voice Driver"/>
+			<string name="InstallBlockedMessage" value="${{title}} kann auf diesem Computer nicht installiert werden."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+		</localized>
+		<localized locale="0x0408">
+			<string name="title" value="NVIDIA RTX Voice Driver"/>
+			<string name="InstallBlockedMessage" value="Το ${{title}} δεν είναι δυνατό να εγκατασταθεί σε αυτόν τον υπολογιστή."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+		</localized>
+		<localized locale="0x0809">
+			<string name="title" value="NVIDIA RTX Voice Driver"/>
+			<string name="InstallBlockedMessage" value="${{title}} cannot be installed on this computer."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+		</localized>
+		<localized locale="0x040a">
+			<string name="title" value="NVIDIA RTX Voice Driver"/>
+			<string name="InstallBlockedMessage" value="${{title}} no puede instalarse en este equipo."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+		</localized>
+		<localized locale="0x080a">
+			<string name="title" value="NVIDIA RTX Voice Driver"/>
+			<string name="InstallBlockedMessage" value="${{title}} no puede instalarse en este equipo."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+		</localized>
+		<localized locale="0x040b">
+			<string name="title" value="NVIDIA RTX Voice Driver"/>
+			<string name="InstallBlockedMessage" value="Sovellusta ${{title}} ei voi asentaa tähän tietokoneeseen."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+		</localized>
+		<localized locale="0x040c">
+			<string name="title" value="NVIDIA RTX Voice Driver"/>
+			<string name="InstallBlockedMessage" value="Impossible d’installer ${{title}} sur cet ordinateur."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+		</localized>
+		<localized locale="0x040d">
+			<string name="title" value="NVIDIA RTX Voice Driver"/>
+			<string name="InstallBlockedMessage" value="${{title}} לא ניתן להתקנה במחשב זה."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+		</localized>
+		<localized locale="0x040e">
+			<string name="title" value="NVIDIA RTX Voice Driver"/>
+			<string name="InstallBlockedMessage" value="A(z) ${{title}} nem telepíthető erre a számítógépre."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+		</localized>
+		<localized locale="0x0410">
+			<string name="title" value="NVIDIA RTX Voice Driver"/>
+			<string name="InstallBlockedMessage" value="Impossibile installare ${{title}} su questo computer."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+		</localized>
+		<localized locale="0x0411">
+			<string name="title" value="NVIDIA RTX Voice Driver"/>
+			<string name="InstallBlockedMessage" value="${{title}} はこのコンピューターにインストールできません。"/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+		</localized>
+		<localized locale="0x0412">
+			<string name="title" value="NVIDIA RTX Voice Driver"/>
+			<string name="InstallBlockedMessage" value="${{title}}은(는) 이 컴퓨터에 설치할 수 없습니다."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+		</localized>
+		<localized locale="0x0413">
+			<string name="title" value="NVIDIA RTX Voice Driver"/>
+			<string name="InstallBlockedMessage" value="${{title}} kan niet op deze computer worden geïnstalleerd."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+		</localized>
+		<localized locale="0x0414">
+			<string name="title" value="NVIDIA RTX Voice Driver"/>
+			<string name="InstallBlockedMessage" value="${{title}} kan ikke installeres på denne datamaskinen."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+		</localized>
+		<localized locale="0x0415">
+			<string name="title" value="NVIDIA RTX Voice Driver"/>
+			<string name="InstallBlockedMessage" value="${{title}} nie może zostać zainstalowany na tym komputerze."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+		</localized>
+		<localized locale="0x0816">
+			<string name="title" value="NVIDIA RTX Voice Driver"/>
+			<string name="InstallBlockedMessage" value="${{title}} não pode ser instalado neste computador."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+		</localized>
+		<localized locale="0x0416">
+			<string name="title" value="NVIDIA RTX Voice Driver"/>
+			<string name="InstallBlockedMessage" value="${{title}} não pode ser instalado neste computador."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+		</localized>
+		<localized locale="0x0419">
+			<string name="title" value="NVIDIA RTX Voice Driver"/>
+			<string name="InstallBlockedMessage" value="${{title}} невозможно установить на этом компьютере."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+		</localized>
+		<localized locale="0x041b">
+			<string name="title" value="NVIDIA RTX Voice Driver"/>
+			<string name="InstallBlockedMessage" value="${{title}} nie je možné na tomto počítači nainštalovať."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+		</localized>
+		<localized locale="0x0424">
+			<string name="title" value="NVIDIA RTX Voice Driver"/>
+			<string name="InstallBlockedMessage" value="${{title}} ni mogoče namestiti na tem računalniku."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+		</localized>
+		<localized locale="0x041d">
+			<string name="title" value="NVIDIA RTX Voice Driver"/>
+			<string name="InstallBlockedMessage" value="${{title}} kan inte installeras på denna dator."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+		</localized>
+		<localized locale="0x041e">
+			<string name="title" value="NVIDIA RTX Voice Driver"/>
+			<string name="InstallBlockedMessage" value="${{title}} ไม่สามารถติดตั้งได้ในคอมพิวเตอร์เครื่องนี้"/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+		</localized>
+		<localized locale="0x041f">
+			<string name="title" value="NVIDIA RTX Voice Driver"/>
+			<string name="InstallBlockedMessage" value="${{title}}, bu bilgisayara kurulamaz."/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+		</localized>
+		<localized locale="0x0804">
+			<string name="title" value="NVIDIA RTX Voice Driver"/>
+			<string name="InstallBlockedMessage" value="${{title}} 无法安装到此计算机。"/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+		</localized>
+		<localized locale="0x0404">
+			<string name="title" value="NVIDIA RTX Voice Driver"/>
+			<string name="InstallBlockedMessage" value="${{title}} 無法安裝在此電腦上。"/>
+			<string name="arpDisplayName" value="NVIDIA ${{title}} ${{version}}"/>
+		</localized>
+	</strings>
+	<dependencies>
+	</dependencies>
+	<description/>
+	<extensions>
+	</extensions>
+	<properties>
+		<bool name="FixedInstallLocation" value="true"/>
+		<string name="InstallLocation" value=""/>
+		<string name="ArpDisplayName" value="${{arpDisplayName}}"/>
+		<bool name="IsGFExperienceComponent" value="true"/></properties>
+	<manifest>
+		<file name="nvrtxaudcap32v.dll"/><file name="nvrtxaudcap64v.dll"/><file name="nvrtxvad.cat"/><file name="nvrtxvad.inf"/><file name="nvrtxvad.nvi"/><file name="nvrtxvad32v.sys"/><file name="nvrtxvad64v.sys"/></manifest>
+	<phases>
+		<if filter="!isStandAloneInstaller">
+			<device phase="installVaD" action="create" fixedProgress="50" deviceProgress="60" autoTick="200">
+				<inf name="*.inf"/>
+				<hwid name="USB\VID_0956&amp;PID_9001"/>
+			</device>
+		</if>
+		<standard phase="copyFileX86" platform="x86">
+			<copyFile target="${{SystemDirectory}}\nvrtxaudcap32v.dll" source="nvrtxaudcap32v.dll"/>
+		</standard>
+		<standard phase="copyFileX64" platform="amd64">
+			<copyFile target="${{SystemDirectory}}\nvrtxaudcap64v.dll" source="nvrtxaudcap64v.dll"/>
+		</standard>
+	</phases>
+	<include name="${{InstallerDllDirectory}}\GFExperienceProgressText.cfg" select="/nvi/*"/>
+</nvi>
